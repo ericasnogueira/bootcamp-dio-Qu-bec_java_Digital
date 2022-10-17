@@ -1,7 +1,7 @@
 package Trabalhando_com_colletions;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.crypto.spec.PSource;
+import java.util.*;
 
 public class ExemploList {
     public static void main(String[] args) {
@@ -49,5 +49,58 @@ public class ExemploList {
         System.out.println("=================");
         System.out.println("Exibindo todas as notas na ordem em que foram informados : ");// ele já faz isso sozinho
         System.out.println(notas);
+
+        System.out.println("=============");
+        //mostrando o numero com base na sua posição
+        System.out.println("Exibindo a terceira nota adicionada : " + notas.get(2));
+        System.out.println("================");
+
+        //exibindo a menor nota
+        System.out.println("Exibindo a menor nota : "+ Collections.min(notas));//usando o metodo de colletions // list faz parte de colletions
+        System.out.println("===================");
+
+        //exibindo a maior nota
+        System.out.println("Exibindo a maior nota : "+ Collections.max(notas));
+        System.out.println("==============================");
+
+        //exibindo a soma das notas
+        System.out.println("Exibindo a soma das notas");
+        Iterator<Double> iterator = notas.iterator();
+        Double soma = 0d;
+        while (iterator.hasNext()){
+            Double next = iterator.next();
+            soma += next;
+        }
+        System.out.println("Exibindo a soma : " + soma);
+
+        System.out.println("===================");
+        System.out.println("Exibindo a media das notas "+ (soma/ notas.size()));
+
+        System.out.println("===============");
+        System.out.println("Removendo a nota");
+        notas.remove(0d);
+        System.out.println(notas);
+
+        System.out.println("==================");
+        //removendo nota pela a posição novamente
+        System.out.println("Remova a nota da posição 0");
+        notas.remove(0);
+        System.out.println(notas);
+
+        System.out.println("====================");
+        System.out.println("Removendo as notas menores que 7 e exibindo a nova lista");
+        Iterator <Double> iterator1 = notas.iterator();
+        while (iterator1.hasNext()){
+            Double next = iterator1.next();
+            if(next < 7) iterator1.remove();
+        }
+        System.out.println(notas );
+        System.out.println("=======================");
+
+        System.out.println("Apagando toda a lista");
+        notas.clear();
+        System.out.println(notas);
+        //conferindo se a lista esta vazia
+        System.out.println("Conferindo se a lista esta vazia : " + notas.isEmpty());// é do tipo boolean
     }
 }
