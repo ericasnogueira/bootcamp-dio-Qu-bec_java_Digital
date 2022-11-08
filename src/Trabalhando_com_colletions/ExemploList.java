@@ -1,6 +1,5 @@
 package Trabalhando_com_colletions;
 
-import javax.crypto.spec.PSource;
 import java.util.*;
 
 public class ExemploList {
@@ -24,6 +23,7 @@ public class ExemploList {
         //imprimindo a lista com as notas
         System.out.println(notas); // pode ser assim OU
         System.out.println(notas.toString());// asssim
+
         System.out.println("===================");
         //exibindo a posição
         System.out.println("Exiba a posição da nota 5.0 ? " + notas.indexOf(5d));
